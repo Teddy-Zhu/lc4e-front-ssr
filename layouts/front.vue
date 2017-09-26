@@ -1,0 +1,115 @@
+<template>
+  <Row>
+    <Col :span="24">
+    <sg-header></sg-header>
+    <Row type="flex" justify="center" class="sg-body">
+      <nuxt/>
+    </Row>
+    <sg-footer></sg-footer>
+    </Col>
+  </Row>
+</template>
+<style>
+  .sg-body {
+    margin-top: 10px;
+  }
+
+  body {
+    margin: 0;
+    min-width: 1024px;
+    background-color: #FFFFFF;
+
+  }
+
+  .bg-blue-light {
+    background-color: #58B7FF;
+  }
+
+  .bg-blue {
+    background-color: #20A0FF;
+  }
+
+  .bg-blue-dark {
+    background-color: #1D8CE0;
+  }
+
+  .bg-info {
+    background-color: #20A0FF;
+  }
+
+  .bg-success {
+    background-color: #13CE66;
+  }
+
+  .bg-warning {
+    background-color: #F7BA2A;
+  }
+
+  .bg-danger {
+    background-color: #FF4949;
+  }
+
+  .bg-black {
+    background-color: #1F2D3D;
+  }
+
+  .bg-black-light {
+    background-color: #324057;
+  }
+
+  .bg-black-lighter {
+    background-color: #475669;
+  }
+
+  .bg-silver {
+    background-color: #8492A6;
+  }
+
+  .bg-silver-light {
+    background-color: #99A9BF;
+  }
+
+  .bg-silver-lighter {
+    background-color: #C0CCDA;
+  }
+
+  .bg-gray-lighter {
+    background-color: #D3DCE6;
+  }
+
+  .bg-gray-light {
+    background-color: #E5E9F2;
+  }
+
+  .bg-gray-lighter {
+    background-color: #EFF2F7;
+  }
+
+  .bg-white-dark {
+    background-color: #F9FAFC;
+  }
+
+  .bg-white {
+    background-color: #FFFFFF;
+  }
+
+  .ivu-col.right {
+    text-align: right;
+  }
+
+  .ivu-col.left {
+    text-align: left;
+  }
+
+</style>
+<script>
+  import Header from '~/components/header.vue'
+  import Footer from '~/components/footer.vue'
+
+  export default {
+    components: {
+      'sg-header': Header,
+      'sg-footer': Footer
+    }
+  }
+</script>
