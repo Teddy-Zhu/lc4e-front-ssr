@@ -22,12 +22,12 @@ export const mutations = {
 }
 
 export const actions = {
-  pullBaseInfo ({state, commit}, callback) {
+  pullBaseInfo ({state, commit, dispatch, rootState}, callback) {
     ajax.post(Api.baseInfoUrl)
       .then(function (response) {
-        console.log('base info' + response)
         if (response.data.result) {
-          commit('updateUser', response.data.data.user ? JSON.parse(response.data.data.user) : {})
+          console.log(rootState)
+          commit('user/updateUser', response.data.data.user ? JSON.parse(response.data.data.user) : {}, {root: true})
           commit('updateBaseInfo', response.data.data)
         }
         callback && callback.call(this, response)

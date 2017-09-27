@@ -1,20 +1,20 @@
 <template>
-  <Row type="flex" justify="center" class="bg-black-light">
-    <Col :span="22">
-    <div class="footer-des">
-      <p>{{base.siteName}} {{base.version}}</p>
-      <a class="footer-a" target="_blank"
-         href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK8</a>
-      <a class="footer-a" target="_blank" href="https://github.com/Teddy-Zhu/SilentGo">SilentGo</a>
-      <a class="footer-a" target="_blank" href="https://github.com/vuejs/vue">Vue2</a>
-    </div>
-    <div class="footer-icon">
-      <a href="https://github.com/Teddy-Zhu/lc4e" target="_blank">
-        <Icon type="social-github"></Icon>
-      </a>
-    </div>
-    </Col>
-  </Row>
+  <i-row type="flex" justify="center" class="bg-black-light">
+    <i-col :span="22">
+      <div class="footer-des">
+        <p>{{base.siteName}} {{base.version}}</p>
+        <a class="footer-a" target="_blank"
+           href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK8</a>
+        <a class="footer-a" target="_blank" href="https://github.com/Teddy-Zhu/SilentGo">SilentGo</a>
+        <a class="footer-a" target="_blank" href="https://github.com/vuejs/vue">Vue2</a>
+      </div>
+      <div class="footer-icon">
+        <a href="https://github.com/Teddy-Zhu/lc4e" target="_blank">
+          <i-icon type="social-github"></i-icon>
+        </a>
+      </div>
+    </i-col>
+  </i-row>
 </template>
 <style>
   .bg-black-light {

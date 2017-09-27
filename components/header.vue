@@ -1,34 +1,34 @@
 <template>
-  <Row type="flex" justify="space-around" class="menu-panel">
-    <Col :span="24">
-    <Affix @on-change="fixChange">
-      <Row type="flex" justify="space-around" class="downline">
-        <Col :span="22">
-        <Menu theme="light" :active-name="$route.path" :mode="mode" @on-select="onSelect">
-          <template v-for="menu in base.menus">
-            <Menu-item :name="menu.abbr" v-if="menu.children.length == 0">{{menu.name}}</Menu-item>
-            <Submenu :name="menu.abbr" v-else>
-              <template slot="title">{{menu.name}}</template>
-              <Menu-item :name="menuchild.abbr" v-for="menuchild in menu.children"
-                         :key="menuchild.abbr">{{menuchild.name}}
-              </Menu-item>
-            </Submenu>
-          </template>
-          <template v-if="!user.id">
-            <Menu-item name="/u/login" class="menu-right">登陆</Menu-item>
-            <Menu-item name="/u/register" class="menu-right">注册</Menu-item>
-          </template>
-          <template v-else>
-            <Menu-item name="/u/signout" class="menu-right">退出</Menu-item>
-            <Menu-item name="/manage" class="menu-right">后台管理</Menu-item>
-            <Menu-item :name="'/i/' + user.id" class="menu-right">{{user.nick}}</Menu-item>
-          </template>
-        </Menu>
-        </Col>
-      </Row>
-    </Affix>
-    </Col>
-  </Row>
+  <i-row type="flex" justify="space-around" class="menu-panel">
+    <i-col :span="24">
+      <i-affix @on-change="fixChange">
+        <i-row type="flex" justify="space-around" class="downline">
+          <i-col :span="22">
+            <i-menu theme="light" :active-name="$route.path" :mode="mode" @on-select="onSelect">
+              <template v-for="menu in base.menus">
+                <i-menu-item :name="menu.abbr" v-if="menu.children.length == 0">{{menu.name}}</i-menu-item>
+                <i-submenu :name="menu.abbr" v-else>
+                  <template slot="title">{{menu.name}}</template>
+                  <i-menu-item :name="menuchild.abbr" v-for="menuchild in menu.children"
+                               :key="menuchild.abbr">{{menuchild.name}}
+                  </i-menu-item>
+                </i-submenu>
+              </template>
+              <template v-if="!user.id">
+                <i-menu-item name="/u/login" class="menu-right">登陆</i-menu-item>
+                <i-menu-item name="/u/register" class="menu-right">注册</i-menu-item>
+              </template>
+              <template v-else>
+                <i-menu-item name="/u/signout" class="menu-right">退出</i-menu-item>
+                <i-menu-item name="/manage" class="menu-right">后台管理</i-menu-item>
+                <i-menu-item :name="'/i/' + user.id" class="menu-right">{{user.nick}}</i-menu-item>
+              </template>
+            </i-menu>
+          </i-col>
+        </i-row>
+      </i-affix>
+    </i-col>
+  </i-row>
 </template>
 <style>
   .menu-panel {

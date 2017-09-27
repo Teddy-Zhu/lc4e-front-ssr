@@ -24,7 +24,6 @@ module.exports = {
     src: '~plugins/i18n', injectAs: 'i18n'
   }, {src: '~plugins/iview', ssr: true}, '~plugins/utils'],
   build: {
-    // 'nprogress',
     vendor: ['axios', 'vue-i18n', 'iview'],
     /*
     ** Run ESLint on save
@@ -38,6 +37,24 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.module.rules.forEach(loader => {
+        if (loader.test.toString() === '/\\.vue$/') {
+          let tmpLoader = loader.loader
+          let options = loader.options
+          loader.use = [{
+            loader: tmpLoader,
+            options: options
+          }, {
+            loader: 'iview-loader',
+            options: {
+              prefix: true
+            }
+          }]
+          delete loader.loader
+          delete loader.options
+        }
+      })
     }
   }
 }

@@ -1,13 +1,11 @@
 <template>
-  <Row>
-    <Col :span="24">
-    <sg-header></sg-header>
-    <Row type="flex" justify="center" class="sg-body">
-      <nuxt/>
-    </Row>
-    <sg-footer></sg-footer>
-    </Col>
-  </Row>
+  <i-row>
+    <i-col :span="24">
+      <sg-header></sg-header>
+      <nuxt></nuxt>
+      <sg-footer></sg-footer>
+    </i-col>
+  </i-row>
 </template>
 <style>
   .sg-body {

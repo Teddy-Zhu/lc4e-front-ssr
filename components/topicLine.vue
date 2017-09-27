@@ -1,56 +1,58 @@
 <template>
-  <Row class="topic-line">
-    <Col :span="24">
-    <table class="topic-table">
-      <tr>
-        <td align="center" width="10%">
-          <a class="topic-author-img-a">
-            <router-link :to="getUserUrl(data.authorId)" :src="getAvatar(data.authorImg)" tag="img"
-                         class="topic-line-img"></router-link>
-          </a>
-        </td>
-        <td align="left" width="75%">
-          <router-link :to="getTopicUrl(data.url)" tag="div" class="topic-line-title">
-            {{data.title}}
-          </router-link>
-          <div class="topic-line-meta">
-            <Breadcrumb separator="/">
-              <Breadcrumb-item :href="getAreaUrl(data.areaAbbr)">
-                <Tag size="small">
-                  <Icon type="ionic"></Icon>
-                  {{data.areaAbbr}}
-                </Tag>
-              </Breadcrumb-item>
-              <Breadcrumb-item :href="getUserUrl(data.authorId)">
-                <Tag class="clickable" size="small">
-                  <Icon type="person"></Icon>
-                  {{data.authorNick}}
-                </Tag>
-              </Breadcrumb-item>
-              <Breadcrumb-item>
-                <Tag class="clickable" size="small">
-                  <Icon type="document-text"></Icon>
-                  {{data.commentCount}}
-                </Tag>
-              </Breadcrumb-item>
-              <Breadcrumb-item>
-                <Tag size="small">
-                  <Icon type="ios-time-outline"></Icon>
-                  {{getDate(data.createTime)}}
-                </Tag>
-              </Breadcrumb-item>
-            </Breadcrumb>
-          </div>
-        </td>
-        <td align="right">
-          <Tag color="yellow" v-for="label in splitText(data.texts)"
-               :key="label" size="small">{{label}}
-          </Tag>
-        </td>
-      </tr>
-    </table>
-    </Col>
-  </Row>
+  <i-row class="topic-line">
+    <i-col :span="24">
+      <table class="topic-table">
+        <tbody>
+        <tr>
+          <td align="center" width="10%">
+            <a class="topic-author-img-a">
+              <router-link :to="getUserUrl(data.authorId)" :src="getAvatar(data.authorImg)" tag="img"
+                           class="topic-line-img"></router-link>
+            </a>
+          </td>
+          <td align="left" width="75%">
+            <router-link :to="getTopicUrl(data.url)" tag="div" class="topic-line-title">
+              {{data.title}}
+            </router-link>
+            <div class="topic-line-meta">
+              <i-breadcrumb separator="/">
+                <i-breadcrumb-item :href="getAreaUrl(data.areaAbbr)">
+                  <i-tag size="small">
+                    <i-icon type="ionic"></i-icon>
+                    {{data.areaAbbr}}
+                  </i-tag>
+                </i-breadcrumb-item>
+                <i-breadcrumb-item :href="getUserUrl(data.authorId)">
+                  <i-tag class="clickable" size="small">
+                    <i-icon type="person"></i-icon>
+                    {{data.authorNick}}
+                  </i-tag>
+                </i-breadcrumb-item>
+                <i-breadcrumb-item>
+                  <i-tag class="clickable" size="small">
+                    <i-icon type="document-text"></i-icon>
+                    {{data.commentCount}}
+                  </i-tag>
+                </i-breadcrumb-item>
+                <i-breadcrumb-item>
+                  <i-tag size="small">
+                    <i-icon type="ios-time-outline"></i-icon>
+                    {{getDate(data.createTime)}}
+                  </i-tag>
+                </i-breadcrumb-item>
+              </i-breadcrumb>
+            </div>
+          </td>
+          <td align="right">
+            <i-tag color="yellow" v-for="label in splitText(data.texts)"
+                   :key="label" size="small">{{label}}
+            </i-tag>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </i-col>
+  </i-row>
 </template>
 <style>
   .topic-author-img-a {

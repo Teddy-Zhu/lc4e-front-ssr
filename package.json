@@ -20,7 +20,7 @@
     "axios": "^0.15.3",
     "iview": "^2.4.0",
     "nuxt": "^1.0.0-rc11",
-    "vue-i18n": "^5.0.2"
+    "vue-i18n": "^7.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -31,6 +31,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "iview-loader": "^1.0.0-beta.4"
   }
 }
